@@ -11,17 +11,17 @@ export default function NavBar() {
     <div>
       <nav className="">
         <div className="nav-wrapper">
-          <Link to={'/'} className="brand-logo"></Link>
+          <Link to={'/#'} className="brand-logo"></Link>
           <Link className="sidenav-trigger" data-target="mobile-links">
             <i className="material-icons">menu</i>
           </Link>
 
           <ul className="right hide-on-med-and-down ">
             <li>
-              <Link to={'/'}>HOME</Link>
+              <Link to={'/#'}>Home</Link>
             </li>
             <li>
-              <Link to={'/About'}>Standing</Link>
+              <Link to={'/Teams'}>Teams</Link>
             </li>
             <li>
               <Link to={'//thedarkestwinters.bandcamp.com/'} target="_blank">
@@ -29,10 +29,10 @@ export default function NavBar() {
               </Link>
             </li>
             <li>
-              <Link to={'/NotFound'}>Favorite Team</Link>
+              <Link to={'/FavTeams'}>Favorite Team</Link>
             </li>
             <li>
-              <Link to={'/NotFound'}>OTHER</Link>
+              <Link to={'/#'}>OTHER</Link>
             </li>
           </ul>
         </div>
@@ -41,10 +41,10 @@ export default function NavBar() {
       {/* IF YOU CHANGE LINK/ROUTER ABOVE, CHANGE BELOW TOO */}
       <ul className="sidenav sidenav-close sdnv" id="mobile-links">
         <li>
-          <Link to={'/'}>HOME</Link>
+          <Link to={'/#'}>Home</Link>
         </li>
         <li>
-          <Link to={'/About'}>Standing</Link>
+          <Link to={'/Teams'}>Teams</Link>
         </li>
         <li>
           <Link to={'//thedarkestwinters.bandcamp.com/'} target="_blank">
@@ -52,10 +52,10 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <Link to={'/NotFound'}>Favorite Team</Link>
+          <Link to={'/FavTeams'}>Favorite Team</Link>
         </li>
         <li>
-          <Link to={'/NotFound'}>OTHER</Link>
+          <Link to={'/#'}>OTHER</Link>
         </li>
       </ul>
     </div>
