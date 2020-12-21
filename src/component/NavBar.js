@@ -9,7 +9,7 @@ export default function NavBar() {
   }, [])
   return (
     <div>
-      <nav className="">
+      <nav className="indigo darken-4">
         <div className="nav-wrapper">
           <Link to={'/#'} className="brand-logo"></Link>
           <Link className="sidenav-trigger" data-target="mobile-links">
