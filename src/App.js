@@ -5,6 +5,7 @@ import NavBar from './component/NavBar'
 import MainPage from './component/MainPage'
 import TeamInfo from './component/pages/TeamInfo'
 import FavTeams from './component/pages/FavTeams'
+import './component/api/api'
 
 const App = () => {
   return (

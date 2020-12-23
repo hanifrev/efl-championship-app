@@ -1,3 +1,5 @@
+console.log('test from api.js')
+
 const apiKey = 'c324a93dadd041058d92d4fcac1dd530'
 const fetchAPI = (url) => {
   return fetch(url, {
@@ -18,3 +20,18 @@ const fetchAPI = (url) => {
       console.log(error)
     })
 }
+
+const ENDPOINT_CLUBS = 'https://api.football-data.org/v2/teams/'
+const ENDPOINT_TEAMS = 'https://api.football-data.org/v2/competitions/2016/teams'
+const ENDPOINT_STAND =
+  'https://api.football-data.org/v2/competitions/2016/standings?standingType=TOTAL'
+
+function testAPI() {
+  fetchAPI(ENDPOINT_TEAMS)
+    .then(function (data) {
+      console.log(data.teams[2].name)
+    })
+    .catch(console.log('error'))
+}
+
+testAPI()
