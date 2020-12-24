@@ -21,17 +21,24 @@ const fetchAPI = (url) => {
     })
 }
 
-const ENDPOINT_CLUBS = 'https://api.football-data.org/v2/teams/'
+// const ENDPOINT_CLUBS = 'https://api.football-data.org/v2/teams/'
 const ENDPOINT_TEAMS = 'https://api.football-data.org/v2/competitions/2016/teams'
-const ENDPOINT_STAND =
-  'https://api.football-data.org/v2/competitions/2016/standings?standingType=TOTAL'
+// const ENDPOINT_STAND =
+//   'https://api.football-data.org/v2/competitions/2016/standings?standingType=TOTAL'
 
 function testAPI() {
-  fetchAPI(ENDPOINT_TEAMS)
-    .then(function (data) {
-      console.log(data.teams[2].name)
-    })
-    .catch(console.log('error'))
+  fetchAPI(ENDPOINT_TEAMS).then(function (data) {
+    const info = data.teams
+    console.log(info[5].name)
+  })
 }
 
 testAPI()
+
+// const apiASW = async () => {
+//   const response = await fetch(fetchAPI(ENDPOINT_TEAMS))
+//   const dataJson = response.json()
+//   console.log(dataJson.teams[2].name)
+// }
+
+// apiASW()
