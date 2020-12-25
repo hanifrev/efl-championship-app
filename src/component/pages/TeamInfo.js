@@ -1,68 +1,91 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import '../../styles/TeamInfo.css'
 
-const TheClub = ({ names }) => {
-  return <div>{names}</div>
-}
+// const TheClub = ({ names }) => {
+//   return <div>{names}</div>
+// }
 
 const Teams = () => {
   const [displayTeam, setDisplayTeam] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
     loadData()
   }, [])
 
   const loadData = async () => {
-    const ENDPOINT_TEAMS = 'https://api.football-data.org/v2/competitions/2016/teams'
-    const apiKey = 'c324a93dadd041058d92d4fcac1dd530'
-    const options = {
-      method: 'GET',
-      headers: {
-        'X-Auth-Token': apiKey
+    setHasError(false)
+
+    try {
+      const ENDPOINT_TEAMS = 'https://api.football-data.org/v2/competitions/2016/teams'
+      const apiKey = 'c324a93dadd041058d92d4fcac1dd530'
+      const options = {
+        method: 'GET',
+        headers: {
+          'X-Auth-Token': apiKey
+        }
       }
+
+      const response = await fetch(ENDPOINT_TEAMS, options)
+      const jsonData = await response.json()
+
+      const info = jsonData.teams
+      console.log(info[9])
+      setDisplayTeam(info)
+      setLoading(false)
+    } catch (error) {
+      setHasError(true)
     }
-
-    const response = await fetch(ENDPOINT_TEAMS, options)
-    const jsonData = await response.json()
-
-    const info = jsonData.teams
-    console.log(info[9])
-    setDisplayTeam(info)
   }
 
   return (
-    <div className="container">
-      <div className="row">
-        <h3 className="center-align">Teams</h3>
-        {displayTeam.map((clubs) => (
-          <div key={clubs.id}>
-            <div className="col s12">
-              <div className="card horizontal">
-                <div className="card-image">
-                  <img
-                    src="${clubs.crestUrl.replace(/^http:\/\//i, 'https://')}"
-                    alt="logo"
-                  ></img>
-                </div>
-                <div className="card-stacked">
-                  <div className="card-content">
-                    <span className="card-title">{clubs.name}</span>
+    <div className="row">
+      <h4 className="center home-title">TEAMS</h4>
+      <div className="col s12">
+        {loading ? (
+          <h6 className="loadings">Loading data . . .</h6>
+        ) : (
+          displayTeam.map((clubs) => (
+            <div key={clubs.id}>
+              <div className="col s12">
+                <div className="card horizontal">
+                  <div className="card-image">
+                    <img
+                      src={clubs.crestUrl.replace(/^http:\/\//i, 'https://')}
+                      alt="Logo"
+                    ></img>
                   </div>
-                </div>
-                <div className="card-action">
-                  <p>link</p>
+                  <div className="card-stacked">
+                    <div className="card-content">
+                      <span className="card-title">{clubs.name}</span>
+                      <p>{clubs.venue}</p>
+                      <p>
+                        <Link to={{ pathname: `${clubs.website}` }} target="_blank">
+                          {clubs.website}
+                        </Link>
+                      </p>
+                    </div>
+                    <div className="card-action">
+                      <Link to={{ pathname: `/test/id` }} target="_blank">
+                        Team Info
+                        {/* DISPLAY TEAM (PLAYERS, MANAGER, ETC) INFO URL */}
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
 
-        <div className="center-align card-panel col s12">
-          <div id="theTeams">
-            {displayTeam.map((clubs) => (
-              <p key={clubs.id}>{clubs.name} </p>
-            ))}
-          </div>
-        </div>
+        {hasError && (
+          <h6 className="loadings">
+            An error occurred while fetching data, data cannot be loaded, please come back
+            later
+          </h6>
+        )}
       </div>
     </div>
   )

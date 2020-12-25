@@ -1,0 +1,35 @@
+.card .card-title {
+  font-size: 22px !important;
+}
+
+.card.horizontal .card-image {
+  max-width: 30% !important;
+  margin: auto;
+  padding: 10px 5px 20px 25px;
+}
+
+.card .card-content p {
+  margin: 2px 0 !important;
+}
+
+.card .card-action {
+  padding: 15px 24px !important;
+}
+
+.home-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.loadings {
+  text-align: center;
+}
+
+@media (max-width: 450px) {
+  .card .card-title {
+    font-size: 20px !important;
+  }
+  .card .card-content {
+    padding: 15px 22px 1px 22px !important;
+  }
+}
