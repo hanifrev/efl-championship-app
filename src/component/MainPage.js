@@ -1,4 +1,5 @@
 import React from 'react'
+import Standing from './api/Standing'
 
 const MainPage = () => {
   return (
@@ -20,11 +21,8 @@ const MainPage = () => {
           <p>the lotus eater and ghost reveries</p>
         </div>
         <div className="center-align card-panel col s12">
-          <h5 className="">Standing</h5>
-          <div id="theStanding"></div>
-          <p>the lotus eater and ghost reveries</p>
-          <p>the lotus eater and ghost reveries</p>
-          <p>the lotus eater and ghost reveries</p>
+          <h5 className="center-align">Standing</h5>
+          <Standing />
         </div>
       </div>
     </div>
