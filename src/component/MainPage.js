@@ -1,5 +1,6 @@
 import React from 'react'
 import Standing from './api/Standing'
+import StandingHeader from './StandingHeader'
 
 const MainPage = () => {
   return (
@@ -20,8 +21,9 @@ const MainPage = () => {
           <p>the lotus eater and ghost reveries</p>
           <p>the lotus eater and ghost reveries</p>
         </div>
-        <div className="center-align card-panel col s12">
+        <div className="card-panel col s12">
           <h5 className="center-align">Standing</h5>
+          <StandingHeader />
           <Standing />
         </div>
       </div>

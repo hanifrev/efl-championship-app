@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 const Standing = () => {
-  const [standing, setStanding] = useState()
+  const [standing, setStanding] = useState([])
   const [loading, setLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
 
@@ -43,7 +43,37 @@ const Standing = () => {
       ) : (
         standing.map((stand, id) => (
           <div key={id}>
-            <div> {stand.team.name} </div>
+            {/* <div>{stand.team.name}</div> */}
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>{stand.position}</div>
+                  </td>
+                  <td>
+                    <div className="left-align">{stand.team.name}</div>
+                  </td>
+                  <td>
+                    <div>{stand.playerGames}</div>
+                  </td>
+                  <td>
+                    <div>{stand.won}</div>
+                  </td>
+                  <td>
+                    <div>{stand.draw}</div>
+                  </td>
+                  <td>
+                    <div>{stand.lost}</div>
+                  </td>
+                  <td>
+                    <div>{stand.goalDifference}</div>
+                  </td>
+                  <td>
+                    <div>{stand.points}</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         ))
       )}
