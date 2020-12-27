@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import '../../styles/Standing.css'
 
 const Standing = () => {
   const [standing, setStanding] = useState([])
@@ -38,51 +39,59 @@ const Standing = () => {
 
   return (
     <div>
-      {loading ? (
-        <h6 className="loadings">Loading data . . .</h6>
-      ) : (
-        standing.map((stand, id) => (
-          <div key={id}>
-            {/* <div>{stand.team.name}</div> */}
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <div>{stand.position}</div>
-                  </td>
-                  <td>
-                    <div className="left-align">{stand.team.name}</div>
-                  </td>
-                  <td>
-                    <div>{stand.playerGames}</div>
-                  </td>
-                  <td>
-                    <div>{stand.won}</div>
-                  </td>
-                  <td>
-                    <div>{stand.draw}</div>
-                  </td>
-                  <td>
-                    <div>{stand.lost}</div>
-                  </td>
-                  <td>
-                    <div>{stand.goalDifference}</div>
-                  </td>
-                  <td>
-                    <div>{stand.points}</div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        ))
-      )}
+      <table className="stdcss">
+        <thead className="">
+          <tr>
+            <th>#</th>
+            <th>Club Name</th>
+            <th className="posctr pd">G</th>
+            <th className="posctr pd">W</th>
+            <th className="posctr pd">D</th>
+            <th className="posctr pd">L</th>
+            <th className="posctr pd">GD</th>
+            <th className="posctr pd">Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          {loading ? (
+            <h6 className="loadings">Loading data . . .</h6>
+          ) : (
+            standing.map((stand, id) => (
+              <tr key={id}>
+                <td>{stand.position}</td>
 
-      {hasError && (
-        <h6 className="loadings">
-          An error occurred while fetching data, data cannot be loaded,
-        </h6>
-      )}
+                <td>
+                  <p>{stand.team.name}</p>
+                </td>
+                <td className="posctr">
+                  <p>{stand.playedGames}</p>
+                </td>
+                <td className="posctr">
+                  <p>{stand.won}</p>
+                </td>
+                <td className="posctr">
+                  <p>{stand.draw}</p>
+                </td>
+                <td className="posctr">
+                  <p>{stand.lost}</p>
+                </td>
+                <td className="posctr">
+                  <p>{stand.goalDifference}</p>
+                </td>
+                <td className="posctr">
+                  <p>{stand.points}</p>
+                </td>
+              </tr>
+            ))
+          )}
+
+          {hasError && (
+            <h6 className="loadings">
+              An error occurred while fetching data, data cannot be loaded,
+            </h6>
+          )}
+        </tbody>
+      </table>
     </div>
   )
 }

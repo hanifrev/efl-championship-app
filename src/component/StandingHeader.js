@@ -16,6 +16,34 @@ const StandingHeader = () => {
             <th>Pts</th>
           </tr>
         </thead>
+        <tbody>
+          <tr>
+            <td>
+              <p>xx</p>
+            </td>
+            <td>
+              <p>xx</p>
+            </td>
+            <td>
+              <p>xx</p>
+            </td>
+            <td>
+              <p>xx</p>
+            </td>
+            <td>
+              <p>xx</p>
+            </td>
+            <td>
+              <p>xx</p>
+            </td>
+            <td>
+              <p>xx</p>
+            </td>
+            <td>
+              <p>xx</p>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   )
