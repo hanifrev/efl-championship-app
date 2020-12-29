@@ -32,7 +32,7 @@ export default function NavBar() {
               <Link to={'/FavTeams'}>Favorite Team</Link>
             </li>
             <li>
-              <Link to={'/#'}>OTHER</Link>
+              <Link to={'/TeamDetail'}>OTHER</Link>
             </li>
           </ul>
         </div>
@@ -55,7 +55,7 @@ export default function NavBar() {
           <Link to={'/FavTeams'}>Favorite Team</Link>
         </li>
         <li>
-          <Link to={'/#'}>OTHER</Link>
+          <Link to={'/TeamDetail'}>OTHER</Link>
         </li>
       </ul>
     </div>
