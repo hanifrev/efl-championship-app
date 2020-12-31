@@ -12,7 +12,7 @@ export default function NavBar() {
       <nav className="indigo darken-4">
         <div className="nav-wrapper">
           <Link to={'/#'} className="brand-logo"></Link>
-          <Link className="sidenav-trigger" data-target="mobile-links">
+          <Link to={'/'} className="sidenav-trigger" data-target="mobile-links">
             <i className="material-icons">menu</i>
           </Link>
 
@@ -24,7 +24,7 @@ export default function NavBar() {
               <Link to={'/Teams'}>Teams</Link>
             </li>
             <li>
-              <Link to={'//thedarkestwinters.bandcamp.com/'} target="_blank">
+              <Link to={'/Teams'} target="_blank">
                 EFL
               </Link>
             </li>
@@ -47,7 +47,7 @@ export default function NavBar() {
           <Link to={'/Teams'}>Teams</Link>
         </li>
         <li>
-          <Link to={'//thedarkestwinters.bandcamp.com/'} target="_blank">
+          <Link to={'/Teams'} target="_blank">
             EFL
           </Link>
         </li>

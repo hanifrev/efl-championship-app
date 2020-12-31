@@ -68,7 +68,10 @@ const Teams = () => {
                       </p>
                     </div>
                     <div className="card-action">
-                      <Link to={{ pathname: `/test/id` }} target="_blank">
+                      <Link
+                        to={{ pathname: `/TeamDetail?id=${clubs.id}` }}
+                        target="_blank"
+                      >
                         Team Info
                         {/* DISPLAY TEAM (PLAYERS, MANAGER, ETC) INFO URL */}
                       </Link>
