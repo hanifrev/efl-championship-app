@@ -25,6 +25,18 @@
   text-align: center;
 }
 
+.btn-small {
+  padding: 0 0 0 25px !important;
+  background-color: white !important;
+  margin-left: auto !important;
+}
+
+.card
+  .card-action
+  a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  color: brown !important;
+}
+
 @media (max-width: 450px) {
   .card .card-title {
     font-size: 20px !important;

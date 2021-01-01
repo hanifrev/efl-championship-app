@@ -11,6 +11,10 @@ const Teams = () => {
   const [loading, setLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
 
+  const refreshPage = () => {
+    window.location.reload()
+  }
+
   useEffect(() => {
     loadData()
   }, [])
@@ -68,9 +72,14 @@ const Teams = () => {
                       </p>
                     </div>
                     <div className="card-action">
-                      <Link to={{ pathname: `/TeamDetail?id=${clubs.id}` }}>
-                        Team Info
-                      </Link>
+                      <button
+                        className="waves-effect waves-light btn-small"
+                        onClick={refreshPage}
+                      >
+                        <Link to={{ pathname: `/TeamDetail?id=${clubs.id}` }}>
+                          Team Info
+                        </Link>
+                      </button>
                     </div>
                   </div>
                 </div>
