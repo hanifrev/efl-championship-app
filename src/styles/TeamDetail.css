@@ -1,0 +1,10 @@
+.logo {
+  max-width: 60% !important;
+  margin: auto !important;
+  padding: 10px 0 !important;
+}
+
+.squadtitles {
+  font-size: 18px;
+  font-weight: bold;
+}

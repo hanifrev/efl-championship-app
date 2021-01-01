@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import '../../styles/TeamDetail.css'
 
 const TeamDetail = () => {
   const [detail, setDetail] = useState([])
+  const [clName, setClName] = useState([])
   const [loading, setLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
 
@@ -29,8 +32,9 @@ const TeamDetail = () => {
       const info = jsonData
       console.log(idParam)
       console.log(response)
-      console.log(info.squad)
-      setDetail(info.squad)
+      console.log(info)
+      setClName(info.name)
+      setDetail(info)
       setLoading(false)
     } catch (error) {
       setHasError(true)
@@ -38,8 +42,45 @@ const TeamDetail = () => {
   }
 
   return (
-    <div>
-      <p>the lotus eater</p>
+    <div className="row">
+      <h4 className="center home-title">{clName}</h4>
+      <div className="col s12">
+        {loading ? (
+          <h6 className="loadings">Loading data . . .</h6>
+        ) : (
+          <div className="row">
+            <div className="container">
+              <div className="center-align card-panel col s12">
+                <div className="card-image">
+                  <img
+                    className="logo"
+                    src={detail.crestUrl.replace(/^http:\/\//i, 'https://')}
+                    alt="Logo"
+                  ></img>
+                </div>
+                <div>{detail.venue}</div>
+                <div>{detail.address}</div>
+                <div>
+                  <Link to={{ pathname: `${detail.website}` }} target="_blank">
+                    {detail.website}
+                  </Link>
+                </div>
+              </div>
+
+              <div className="center-align card-panel col s12">
+                <h4 className="squadtitles">{detail.shortName}`s Squad</h4>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {hasError && (
+          <h6 className="loadings">
+            An error occurred while fetching data, data cannot be loaded, please come back
+            later
+          </h6>
+        )}
+      </div>
     </div>
   )
 }

@@ -14,7 +14,6 @@ const App = () => {
       <NavBar />
       <Switch>
         <Route path="/" component={MainPage} exact />
-        {/* <Route path="/Home" component={MainPage} /> */}
         <Route path="/Teams" component={TeamInfo} />
         <Route path="/FavTeams" component={FavTeams} />
         <Route path="/TeamDetail" component={TeamDetail} />

@@ -12,7 +12,7 @@ export default function NavBar() {
       <nav className="indigo darken-4">
         <div className="nav-wrapper">
           <Link to={'/#'} className="brand-logo"></Link>
-          <Link to={'/'} className="sidenav-trigger" data-target="mobile-links">
+          <Link className="sidenav-trigger" data-target="mobile-links">
             <i className="material-icons">menu</i>
           </Link>
 
