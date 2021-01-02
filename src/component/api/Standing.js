@@ -79,7 +79,9 @@ const Standing = () => {
                   <p>{stand.goalDifference}</p>
                 </td>
                 <td className="posctr">
-                  <p>{stand.points}</p>
+                  <p>
+                    <b>{stand.points}</b>
+                  </p>
                 </td>
               </tr>
             ))
