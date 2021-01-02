@@ -1,5 +1,6 @@
 import React from 'react'
 import Standing from './api/Standing'
+import LatestMatch from './api/LatestMatch'
 
 const MainPage = () => {
   return (
@@ -8,10 +9,8 @@ const MainPage = () => {
         <h2 className="center-align card-panel col s12">Watershed</h2>
         <div className="center-align card-panel col s12">
           <h5>Latest Result</h5>
-          <div id="theResult"></div>
-          <p>the lotus eater and ghost reveries</p>
-          <p>the lotus eater and ghost reveries</p>
-          <p>the lotus eater and ghost reveries</p>
+
+          <LatestMatch />
         </div>
         <div className="center-align card-panel col s12">
           <h5>Upcoming Fixtures</h5>

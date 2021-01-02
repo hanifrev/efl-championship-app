@@ -73,7 +73,7 @@ const Teams = () => {
                     </div>
                     <div className="card-action">
                       <button
-                        className="waves-effect waves-light btn-small"
+                        // className="waves-effect waves-light btn-small"
                         onClick={refreshPage}
                       >
                         <Link to={{ pathname: `/TeamDetail?id=${clubs.id}` }}>

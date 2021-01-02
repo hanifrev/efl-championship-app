@@ -8,3 +8,7 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+.paddingdown {
+  padding: 5px 0.75rem !important;
+}

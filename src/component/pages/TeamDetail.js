@@ -50,7 +50,7 @@ const TeamDetail = () => {
         ) : (
           <div className="row">
             <div className="container">
-              <div className="center-align card-panel col s12">
+              <div className="center-align card-panel col s12 paddingdown">
                 <div className="card-image">
                   <img
                     className="logo"

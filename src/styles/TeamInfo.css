@@ -13,7 +13,7 @@
 }
 
 .card .card-action {
-  padding: 15px 24px !important;
+  padding: 13px 24px 13px 13px !important;
 }
 
 .home-title {
@@ -25,16 +25,21 @@
   text-align: center;
 }
 
-.btn-small {
+/* .btn-small {
   padding: 0 0 0 25px !important;
   background-color: white !important;
   margin-left: auto !important;
-}
+} */
 
 .card
   .card-action
   a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
   color: brown !important;
+}
+button {
+  border: none !important;
+  background: none !important;
+  padding: 0 10px 0 10px !important;
 }
 
 @media (max-width: 450px) {
