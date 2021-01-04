@@ -28,7 +28,8 @@ const Standing = () => {
       const jsonData = await response.json()
 
       const info = jsonData.standings[0].table
-      console.log(info[3].team.name)
+      // const season = jsonData.season.currentMatchday
+      // console.log(season)
       console.log('test')
       setStanding(info)
       setLoading(false)

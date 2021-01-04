@@ -3,9 +3,7 @@ import '../../styles/LatestMatch.css'
 
 const LatestMatch = () => {
   const [lastMatch, setLastMatch] = useState([])
-  //   const [home, setHome] = useState([])
-  //   const [away, setAway] = useState([])
-  //   const [score, setScore] = useState([])
+  const [cmd, setCmd] = useState([])
   const [loading, setLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
 
@@ -17,6 +15,8 @@ const LatestMatch = () => {
     setHasError(false)
 
     try {
+      const ENDPOINT_SEASONMD =
+        'https://api.football-data.org/v2/competitions/2016/standings'
       const ENDPOINT_MATCH =
         'https://api.football-data.org/v2/competitions/2016/matches?status=FINISHED '
       const apiKey = 'c324a93dadd041058d92d4fcac1dd530'
@@ -26,35 +26,22 @@ const LatestMatch = () => {
           'X-Auth-Token': apiKey
         }
       }
+      // SEASON CURRENT MATCHDAY
+      const resCurMD = await fetch(ENDPOINT_SEASONMD, options)
+      const mdData = await resCurMD.json()
+      const infoMD = mdData.season.currentMatchday
+      console.log(infoMD)
+      setCmd(infoMD)
 
+      //MATCH RESULT
       const response = await fetch(ENDPOINT_MATCH, options)
       const jsonData = await response.json()
 
       const info = jsonData.matches
 
-      console.log(info.filter((md) => md.matchday >= 22))
-      console.log(info.filter((md) => md.matchday >= 22).map((x) => x.awayTeam.name))
-      console.log(info.filter((md) => md.matchday >= 22).map((x) => x.score))
-
-      //   setHome(
-      //     info
-      //       .filter((md) => md.matchday >= 22)
-      //       .map((x) => (
-      //         <div key={x.id}>
-      //           <p>{x.homeTeam.name}</p>
-      //         </div>
-      //       ))
-      //   )
-
-      //   setAway(
-      //     info
-      //       .filter((md) => md.matchday >= 22)
-      //       .map((x) => (
-      //         <div key={x.id}>
-      //           <p>{x.awayTeam.name}</p>
-      //         </div>
-      //       ))
-      //   )
+      console.log(info.filter((md) => md.matchday === { cmd }))
+      // console.log(info.filter((md) => md.matchday >= 22).map((x) => x.awayTeam.name))
+      // console.log(info.filter((md) => md.matchday >= 22).map((x) => x.score))
 
       setLastMatch(info)
       setLoading(false)
@@ -65,7 +52,15 @@ const LatestMatch = () => {
 
   return (
     <div>
-      <p className="center-align">Matchday</p>
+      <div>
+        {/* <button onClick={() => setMd(md - 1)}>
+          <span className="material-icons">navigate_before</span>
+        </button> */}
+        <p className="center-align">Matchday {cmd}</p>
+        {/* <button onClick={() => setMd(md + 1)}>
+          <span className="material-icons">navigate_next</span>
+        </button> */}
+      </div>
       <table>
         <thead className="header">
           <tr>
@@ -79,7 +74,7 @@ const LatestMatch = () => {
             <h6 className="loadings">Loading data . . .</h6>
           ) : (
             lastMatch
-              .filter((md) => md.matchday === 13)
+              .filter((md) => md.matchday === 9)
               .map((x) => (
                 // <div key={x.id}>
                 //   <p>{x.awayTeam.name}</p>
