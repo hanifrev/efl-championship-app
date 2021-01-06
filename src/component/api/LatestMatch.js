@@ -97,10 +97,6 @@ const LatestMatch = () => {
             lastMatch
               .filter((md) => md.matchday === theMD)
               .map((x) => (
-                // <div key={x.id}>
-                //   <p>{x.awayTeam.name}</p>
-                //   <p>{x.homeTeam.name}</p>
-                // </div>
                 <tr key={x.id}>
                   <td className="left-align">{x.homeTeam.name}</td>
                   <td>

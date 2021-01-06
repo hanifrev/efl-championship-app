@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 const UpFixture = () => {
-  const [theMatchday, setTheMatchday] = useState(0)
+  const [upcomingFixt, setUpcomingFixt] = useState([])
   const [loading, setLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
 
@@ -10,9 +10,9 @@ const UpFixture = () => {
   }, [])
 
   const loadData = async () => {
-    setHasError(false)
     try {
-      const ENDPOINT_UPFIX = 'https://api.football-data.org/v2/competitions/2016/matches?'
+      // const matchUpcoming = `matches?matchday=25`
+      const ENDPOINT_SCHEDULED = 'https://api.football-data.org/v2/competitions/2016/'
       const apiKey = 'c324a93dadd041058d92d4fcac1dd530'
       const options = {
         method: 'GET',
@@ -21,13 +21,24 @@ const UpFixture = () => {
         }
       }
 
-      const response = await fetch(`${ENDPOINT_UPFIX}/${(matchday = 21)}`, options)
+      // fetch the currentMatchday first, then add 1
+      const response = await fetch(ENDPOINT_SCHEDULED, options)
       const jsonData = await response.json()
+      const upMatch = jsonData.currentSeason.currentMatchday + 1
+      // PLUS 1 ABOVE TO SHOW THE UPCOMING FIXTURE
+      const resUpMD = await fetch(
+        `${ENDPOINT_SCHEDULED}/matches?matchday=${upMatch}`,
+        options
+      )
 
-      const info = jsonData
+      const jsonUpMD = await resUpMD.json()
 
-      console.log(info)
+      console.log(jsonUpMD)
+      // console.log(upMatch)
+      // console.log(jsonData)
+      // console.log(matchUpcoming)
 
+      setUpcomingFixt(jsonUpMD)
       setLoading(false)
     } catch (error) {
       setHasError(true)
@@ -36,7 +47,7 @@ const UpFixture = () => {
 
   return (
     <div>
-      <p>the lotus eater</p>
+      <p>the lotus eaters</p>
     </div>
   )
 }
