@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import '../../styles/LatestMatch.css'
 
 const UpFixture = () => {
   const [upcomingFixt, setUpcomingFixt] = useState([])
+  // const [mdInfo, setMdInfo] = useState(0)
   const [loading, setLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
 
@@ -32,13 +34,17 @@ const UpFixture = () => {
       )
 
       const jsonUpMD = await resUpMD.json()
+      const fixtureMap = jsonUpMD.matches
 
-      console.log(jsonUpMD)
-      // console.log(upMatch)
+      // const matchdayInfo = jsonUpMD.matchday
+
+      // console.log(jsonUpMD.matches[5].homeTeam.name)
+      console.log(fixtureMap)
+      console.log(upMatch)
       // console.log(jsonData)
       // console.log(matchUpcoming)
-
-      setUpcomingFixt(jsonUpMD)
+      // setMdInfo(upMatch)
+      setUpcomingFixt(fixtureMap)
       setLoading(false)
     } catch (error) {
       setHasError(true)
@@ -47,7 +53,34 @@ const UpFixture = () => {
 
   return (
     <div>
-      <p>the lotus eaters</p>
+      <table>
+        <thead className="header">
+          <tr>
+            <th></th>
+            <th className="center-align"></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {loading ? (
+            <h6 className="loadings">Loading data . . .</h6>
+          ) : (
+            upcomingFixt.map((x, id) => (
+              <tr key={id}>
+                <td className="left-align">{x.homeTeam.name}</td>
+                <td>vs</td>
+                <td className="right-align">{x.awayTeam.name}</td>
+              </tr>
+            ))
+          )}
+          {hasError && (
+            <h6 className="loadings">
+              An error occurred while fetching data, data cannot be loaded, please come
+              back later
+            </h6>
+          )}
+        </tbody>
+      </table>
     </div>
   )
 }
