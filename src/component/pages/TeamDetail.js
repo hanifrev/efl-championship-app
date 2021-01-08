@@ -5,6 +5,7 @@ import '../../styles/TeamDetail.css'
 const TeamDetail = () => {
   const [detail, setDetail] = useState([])
   const [clName, setClName] = useState([])
+  const [player, setPlayer] = useState([])
   const [loading, setLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
 
@@ -34,6 +35,7 @@ const TeamDetail = () => {
       console.log(response)
       console.log(info)
       setClName(info.name)
+      setPlayer(info.squad)
       setDetail(info)
       setLoading(false)
     } catch (error) {
@@ -69,6 +71,67 @@ const TeamDetail = () => {
 
               <div className="center-align card-panel col s12">
                 <h4 className="squadtitles">{detail.shortName}`s Squad</h4>
+                {/* MANAGER */}
+                <div className="center-align">
+                  {player
+                    .filter((rl) => rl.role === 'COACH')
+                    .map((x) => (
+                      <div key={x.id}>Manager: {x.name}</div>
+                    ))}
+                </div>
+                <br></br>
+
+                {/* GOALKEEPER */}
+                <div className="center-align">
+                  <h6>
+                    <b>Goalkeeper</b>
+                  </h6>
+                  {player
+                    .filter((pos) => pos.position === 'Goalkeeper')
+                    .map((x) => (
+                      <p key={x.id}>{x.name}</p>
+                    ))}
+                </div>
+                <br></br>
+
+                {/* DEFENDER */}
+                <div className="center-align">
+                  <h6>
+                    <b>Defender</b>
+                  </h6>
+                  {player
+                    .filter((pos) => pos.position === 'Defender')
+                    .map((x) => (
+                      <p key={x.id}>{x.name}</p>
+                    ))}
+                </div>
+                <br></br>
+
+                {/* MIDFIELDER */}
+                <div className="center-align">
+                  <h6>
+                    <b>Midfielder</b>
+                  </h6>
+                  {player
+                    .filter((pos) => pos.position === 'Midfielder')
+                    .map((x) => (
+                      <p key={x.id}>{x.name}</p>
+                    ))}
+                </div>
+                <br></br>
+
+                {/* FORWARD */}
+                <div className="center-align">
+                  <h6>
+                    <b>Forward</b>
+                  </h6>
+                  {player
+                    .filter((pos) => pos.position === 'Attacker')
+                    .map((x) => (
+                      <p key={x.id}>{x.name}</p>
+                    ))}
+                </div>
+                <br></br>
               </div>
             </div>
           </div>

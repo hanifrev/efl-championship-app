@@ -12,3 +12,7 @@
 .paddingdown {
   padding: 5px 0.75rem !important;
 }
+
+.manager {
+  display: flex !important;
+}

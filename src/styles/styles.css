@@ -32,4 +32,9 @@
 .maintitle {
   font-size: 28px !important;
   padding: 10px 2px !important;
+  margin: 8px 0px !important;
+}
+
+.banner {
+  padding: 15px 47px 10px 47px !important;
 }

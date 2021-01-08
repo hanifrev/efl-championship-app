@@ -63,7 +63,8 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './public/index.html',
       filename: 'index.html',
-      chunks: ['main']
+      chunks: ['main'],
+      favicon: './public/favicon.ico'
     })
     // new WorkboxPlugin.GenerateSW({
     //   // Do not precache images
