@@ -24,3 +24,12 @@
 .loadings {
   text-align: center;
 }
+
+.upfixt {
+  padding-bottom: 10px;
+}
+
+.maintitle {
+  font-size: 28px !important;
+  padding: 10px 2px !important;
+}

@@ -67,9 +67,9 @@ const UpFixture = () => {
           ) : (
             upcomingFixt.map((x, id) => (
               <tr key={id}>
-                <td className="left-align">{x.homeTeam.name}</td>
-                <td>vs</td>
-                <td className="right-align">{x.awayTeam.name}</td>
+                <td className="left-align fixture">{x.homeTeam.name}</td>
+                <td className="fixture">vs</td>
+                <td className="right-align fixture">{x.awayTeam.name}</td>
               </tr>
             ))
           )}

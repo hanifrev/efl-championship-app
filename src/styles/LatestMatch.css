@@ -1,3 +1,8 @@
 thead > tr > th {
   padding: 0 13px 0 2px !important;
 }
+/* THAT TH ABOVE SEEMS WONT AFFECT ANYTHING SINCE TH WAS ONLY CONTAINER */
+
+.fixture {
+  padding: 8px 3px !important;
+}

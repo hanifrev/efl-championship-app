@@ -98,11 +98,11 @@ const LatestMatch = () => {
               .filter((md) => md.matchday === theMD)
               .map((x) => (
                 <tr key={x.id}>
-                  <td className="left-align">{x.homeTeam.name}</td>
-                  <td>
+                  <td className="left-align fixture">{x.homeTeam.name}</td>
+                  <td className="fixture">
                     {x.score.fullTime.homeTeam}-{x.score.fullTime.awayTeam}
                   </td>
-                  <td className="right-align">{x.awayTeam.name}</td>
+                  <td className="right-align fixture">{x.awayTeam.name}</td>
                 </tr>
               ))
           )}
