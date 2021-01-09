@@ -31,9 +31,9 @@ const TeamDetail = () => {
       const jsonData = await response.json()
 
       const info = jsonData
-      console.log(idParam)
-      console.log(response)
-      console.log(info)
+      // console.log(idParam)
+      // console.log(response)
+      // console.log(info)
       setClName(info.name)
       setPlayer(info.squad)
       setDetail(info)

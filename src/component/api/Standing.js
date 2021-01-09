@@ -30,7 +30,7 @@ const Standing = () => {
       const info = jsonData.standings[0].table
       // const season = jsonData.season.currentMatchday
       // console.log(season)
-      console.log('test')
+      // console.log('test')
       setStanding(info)
       setLoading(false)
     } catch (error) {

@@ -39,8 +39,8 @@ const UpFixture = () => {
       // const matchdayInfo = jsonUpMD.matchday
 
       // console.log(jsonUpMD.matches[5].homeTeam.name)
-      console.log(fixtureMap)
-      console.log(upMatch)
+      // console.log(fixtureMap)
+      // console.log(upMatch)
       // console.log(jsonData)
       // console.log(matchUpcoming)
       // setMdInfo(upMatch)

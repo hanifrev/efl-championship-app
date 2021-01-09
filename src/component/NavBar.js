@@ -12,9 +12,9 @@ export default function NavBar() {
       <nav className="indigo darken-4">
         <div className="nav-wrapper">
           <Link to={'/#'} className="brand-logo"></Link>
-          <Link className="sidenav-trigger" data-target="mobile-links">
+          <a href="true" className="sidenav-trigger" data-target="mobile-links">
             <i className="material-icons">menu</i>
-          </Link>
+          </a>
 
           <ul className="right hide-on-med-and-down ">
             <li>
@@ -24,7 +24,10 @@ export default function NavBar() {
               <Link to={'/Teams'}>Teams</Link>
             </li>
             <li>
-              <Link to={'/Teams'} target="_blank">
+              <Link
+                to={'//www.efl.com/clubs-and-competitions/sky-bet-championship/'}
+                target="_blank"
+              >
                 EFL
               </Link>
             </li>
@@ -32,7 +35,7 @@ export default function NavBar() {
               <Link to={'/FavTeams'}>Favorite Team</Link>
             </li>
             <li>
-              <Link to={'/TeamDetail'}>OTHER</Link>
+              <Link to={'/NotFound'}>Other</Link>
             </li>
           </ul>
         </div>
@@ -47,7 +50,10 @@ export default function NavBar() {
           <Link to={'/Teams'}>Teams</Link>
         </li>
         <li>
-          <Link to={'/Teams'} target="_blank">
+          <Link
+            to={'//www.efl.com/clubs-and-competitions/sky-bet-championship/'}
+            target="_blank"
+          >
             EFL
           </Link>
         </li>
@@ -55,7 +61,7 @@ export default function NavBar() {
           <Link to={'/FavTeams'}>Favorite Team</Link>
         </li>
         <li>
-          <Link to={'/TeamDetail'}>OTHER</Link>
+          <Link to={'/NotFound'}>Other</Link>
         </li>
       </ul>
     </div>

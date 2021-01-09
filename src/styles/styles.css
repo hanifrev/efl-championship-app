@@ -38,3 +38,8 @@
 .banner {
   padding: 15px 47px 10px 47px !important;
 }
+
+.comptitle {
+  font-size: 19px !important;
+  font-weight: 600 !important;
+}

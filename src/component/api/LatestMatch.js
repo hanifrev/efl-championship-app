@@ -61,7 +61,7 @@ const LatestMatch = () => {
       const resCurMD = await fetch(ENDPOINT_SEASONMD, options)
       const mdData = await resCurMD.json()
       var infoMD = mdData.season.currentMatchday
-      console.log(infoMD)
+      // console.log(infoMD)
       setCmd(infoMD)
     } catch (error) {
       setHasError(true)
