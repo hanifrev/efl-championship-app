@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
+const WebpackPwaManifest = require('webpack-pwa-manifest')
 // const WorkboxPlugin = require('workbox-webpack-plugin')
 
 module.exports = {
@@ -46,6 +47,7 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif|tiff|ico)$/,
         use: ['file-loader']
       }
+
       // {
       //   test: /\.(jpe?g|gif|png|svg)$/i,
       //   use: [
@@ -65,7 +67,33 @@ module.exports = {
       filename: 'index.html',
       chunks: ['main'],
       favicon: './public/favicon.ico'
+    }),
+    new WebpackPwaManifest({
+      name: 'EFL Championship App',
+      short_name: 'EFL Championship',
+      description: 'EFL Championship Information Website',
+      background_color: '#3367D6',
+      crossorigin: 'use-credentials',
+      icons: [
+        {
+          src: path.resolve('src/assets/logo/icon512.png'),
+          sizes: '512x512',
+          type: 'image/png'
+        },
+        {
+          src: path.resolve('src/assets/logo/icon225.png'),
+          sizes: '225x225',
+          type: 'image/png'
+        },
+        {
+          src: path.resolve('src/assets/logo/icon256.png'),
+          sizes: '256x256',
+          type: 'image/png'
+        }
+      ]
     })
+
+    // })
     // new WorkboxPlugin.GenerateSW({
     //   // Do not precache images
     //   exclude: [/\.(?:png|jpg|jpeg|svg)$/],
