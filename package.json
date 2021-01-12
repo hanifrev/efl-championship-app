@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode=development --open --hot",
-    "build": "webpack --mode=production build && echo '/* /index.html 200' | cat >dist/_redirects",
+    "build": "webpack --mode=production && echo '/* /index.html 200' | cat >dist/_redirects",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
   },
