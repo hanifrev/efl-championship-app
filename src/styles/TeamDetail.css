@@ -1,5 +1,5 @@
 .logo {
-  max-width: 60% !important;
+  max-width: 30% !important;
   margin: auto !important;
   padding: 10px 0 !important;
 }
@@ -15,4 +15,10 @@
 
 .manager {
   display: flex !important;
+}
+
+.detail-container {
+  max-width: 580px;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
