@@ -50,8 +50,8 @@ const TeamDetail = () => {
         {loading ? (
           <h6 className="loadings">Loading data . . .</h6>
         ) : (
-          <div className="row">
-            <div className="container">
+          <div className="row detail-container">
+            <div className="container ">
               <div className="center-align card-panel col s12 paddingdown">
                 <div className="card-image">
                   <img

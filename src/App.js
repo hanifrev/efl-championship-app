@@ -7,6 +7,7 @@ import TeamInfo from './component/pages/TeamInfo'
 import FavTeams from './component/pages/FavTeams'
 import TeamDetail from './component/pages/TeamDetail'
 import NotFound from './component/NotFound'
+import Attribute from './component/Attribute'
 import './component/api/api'
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/TeamDetail" component={TeamDetail} />
         <Route path="/NotFound" component={NotFound} />
       </Switch>
+      <Attribute />
     </div>
   )
 }

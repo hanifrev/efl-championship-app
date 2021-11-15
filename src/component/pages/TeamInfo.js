@@ -45,7 +45,7 @@ const Teams = () => {
   }
 
   return (
-    <div className="row">
+    <div className="row team-container">
       <h4 className="center home-title">TEAMS</h4>
       <div className="col s12">
         {loading ? (
